@@ -114,7 +114,7 @@ export default function Recommend(props) {
                     <NDList props={albums}></NDList>
 
 
-                    <Bill props={upList, newList, originList, dispatch, addSongToList, playSongBySelect}></Bill>
+                    <Bill></Bill>
 
                 </div>
 

@@ -1,8 +1,10 @@
 import React, { Fragment,useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { getToplistDetail } from '../../../service/toplist';
-
+import { addSongToList, playSongBySelect } from '../../player/store/actionCreators';
 export default function Bill(props) {
-    let { dispatch, addSongToList, playSongBySelect} = props;
+
+    const dispatch = useDispatch();
     let [upList, setUpList] = useState([]);
     let [newList, setNewList] = useState([]);
     let [originList, setOriginList] = useState([]);
@@ -73,12 +75,12 @@ export default function Bill(props) {
                                                     <span>{index + 1}</span>
                                                     <a href={songId}>{item?.name}</a>
                                                     <div>
-                                                        <button className="playBtn" onClick={async () => {
+                                                        <button className="playBtn" onClick={() => 
                                                             dispatch(playSongBySelect(item.id))
-                                                        }}></button>
-                                                        <button className="addToListBtn" onClick={() => {
-                                                            dispatch(addSongToList(item.id));
-                                                        }}></button>
+                                                        }></button>
+                                                        <button className="addToListBtn" onClick={() => 
+                                                            dispatch(addSongToList(item.id))
+                                                        }></button>
                                                         <button className="collectBtn"></button>
                                                     </div>
                                                 </li>
