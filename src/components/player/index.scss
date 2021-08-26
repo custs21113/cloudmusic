@@ -1,0 +1,249 @@
+.prinntTest {
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    // transform: translate(-50%, -50%);
+}
+.addTest {
+    position: fixed;
+    left: 200px;
+    top: 200px;
+    // transform: translate(-50%, -50%);
+}
+// .songlist {
+//     position: fixed;
+//     left: 300px;
+//     top: 300px;
+//     width: 466px;
+// }
+.player {
+    width: 100%;
+    // border-top: 1px solid red;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    z-index: 100;
+    .bg {
+        // border: 1px solid blue;
+        height: 53px;
+        background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+        background-position: 0 0;
+        background-repeat: repeat-x;
+    }
+    .player-content {
+        // border: 1px solid green;
+
+        width: 980px;
+        height: 47px;
+
+        position: absolute;
+        left: 50%;
+        top: 6px;
+        transform: translateX(-50%);
+
+        display: flex;
+        align-items: center;
+        z-index: 100;
+        .buttons {
+            display: flex;
+            width: 137px;
+            // justify-content: space-between;
+            align-items: center;
+            button {
+                color: #c3c3c3;
+                background: url("../../static/assets/playbar.png") no-repeat;
+                text-indent: -9999px;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+            .previous {
+                width: 28px;
+                height: 28px;
+                background-position: 0 -130px;
+            }
+            .previous:hover {
+                background-position: -30px -130px;
+            }
+            .play {
+                width: 36px;
+                height: 36px;
+                background-position: 0 -204px;
+            }
+            .play:hover {
+                background-position: -40px -204px;
+            }
+            .pause {
+                width: 36px;
+                height: 36px;
+                background-position: 0 -165px;
+            }
+            .pause:hover {
+                background-position: -40px -165px;
+            }
+            .next {
+                width: 28px;
+                height: 28px;
+                background-position: -80px -130px;
+            }
+            .next:hover {
+                background-position: -110px -130px;
+            }
+        }
+        .head {
+            position: relative;
+            img {
+                width: 34px;
+                height: 34;
+                // background: url('../../static/assets/default_album.jpg');
+            }
+            a {
+                width: 34px;
+                height: 35px;
+                background: url("../../static/assets/playbar.png");
+                background-position: 0 -80px;
+                // border: 1px solid yellow;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            margin-right: 15px;
+        }
+        .play {
+            width: 581px;
+            height: 37px;
+            display: flex;
+            // flex-direction: column;
+            top: 6px;
+            // justify-content: space-between;
+            .song-info {
+                height: 28px;
+                overflow: hidden;
+                line-height: 28px;
+                // top: 10px;
+                text-shadow: 0 1px 0 #171717;
+                > span > span {
+                    > a {
+                        color: #9b9b9b;
+                        font-size: 0.75rem;
+                    }
+                    > a:hover {
+                        text-decoration: underline;
+                    }
+                    > a.test::after {
+                        content: "/";
+                    }
+                    > a.test:last-child:after {
+                        content: "";
+                    }
+                }
+            }
+            .player-bar {
+                width: 466px;
+                position: relative;
+                background: url("../../static/assets/statbar.png") no-repeat 0 9999px;
+                background-position: right 0px;
+                max-width: 466px;
+                .ready {
+                    width: 0%;
+                    height: 9px;
+                    background: url("../../static/assets/statbar.png") no-repeat 0 9999px;
+                    background-position: right -30px;
+                    max-width: 466px;
+                }
+                .current {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 0%;
+                    height: 9px;
+                    background: url("../../static/assets/statbar.png") no-repeat 0 9999px;
+                    background-position: left -66px;
+                    max-width: 466px;
+                    span {
+                        position: absolute;
+                        top: -7px;
+                        right: -13px;
+                        width: 22px;
+                        height: 24px;
+                        margin-left: -11px;
+                        background: url("../../static/assets/iconall.png") no-repeat 0 9999px;
+                        background-position: 0 -250px;
+                        max-width: 466px;
+                        z-index: 1;
+                    }
+                    span:hover {
+                        // background: url('../../static/assets/ply_btn_hvr.png') no-repeat 0 9999px;
+                        background-position: 0 -280px;
+                    }
+                }
+            }
+            span.time {
+                position: relative;
+                top: 20px;
+                left: 10px;
+                max-width: 466px;
+                em {
+                    color: #9b9b9b;
+                    font-size: 0.75rem;
+                    font-style: normal;
+                }
+            }
+        }
+        .operation {
+            .collection {
+                // float: left;
+                width: 25px;
+                height: 25px;
+                text-indent: -9999px;
+                background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+                background-position: -88px -163px;
+                cursor: pointer;
+            }
+            .collection:hover {
+                background-position: -88px -189px;
+            }
+            .share {
+                width: 25px;
+                height: 25px;
+                text-indent: -9999px;
+                background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+                background-position: -114px -163px;
+                cursor: pointer;
+            }
+            .share:hover {
+                background-position: -114px -189px;
+            }
+        }
+        .control {
+            position: relative;
+            .volume-bar {
+                position: absolute;
+                width: 32px;
+                height: 113px;
+                bottom: 35px;
+                // border: 1px solid red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+                background-position: 0 -503px;
+            }
+            .volume {
+                width: 25px;
+                height: 25px;
+                text-indent: -9999px;
+                background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+                background-position: -2px -248px;
+                cursor: pointer;
+            }
+            .mode {
+                width: 25px;
+                height: 25px;
+                text-indent: -9999px;
+                background: url("../../static/assets/playbar.png") no-repeat 0 9999px;
+                background-position: -3px -344px;
+                cursor: pointer;
+            }
+        }
+    }
+}

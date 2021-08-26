@@ -1,0 +1,38 @@
+.friend {
+    background-color: #f5f5f5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .friend-content {
+        width: 980px;
+        min-height: 700px;
+        // margin: 0px auto;
+        background-color: #ffffff;
+        position: relative;
+        .friend-pic {
+            width: 902px;
+            height: 484px;
+            margin: 0 auto 0;
+            padding-top: 70px;
+            background: url("../../static/assets/notlogin.jpg") no-repeat 0 9999px;
+            background-position: 0 70px;
+            button {
+                // position: absolute;
+                z-index: 1000;
+                width: 157px;
+                height: 48px;
+                margin: 260px 0 0 535px;
+                text-indent: -9999;
+                // border: 1px solid red;
+                background-position: 0 9999px;
+                text-indent: -9999px;
+                background: url("../../static/assets/notlogin.jpg") no-repeat 0 9999px;
+            }
+            button:hover {
+                background-position: 0 -430px;
+                cursor: pointer;
+            }
+        }
+    }
+}

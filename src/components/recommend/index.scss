@@ -1,0 +1,736 @@
+.recommend {
+    background-color: #f5f5f5;
+    .discover-module {
+        width: 980px;
+        position: relative;
+        margin: 0px auto;
+        // border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+        background-color: #ffffff;
+        .discover-content {
+            width: 729px;
+            padding: 20px 20px 40px;
+            .discover-header {
+                border-bottom: 2px solid #c10d0c;
+                height: 33px;
+                padding: 0px 10px 0px 34px;
+                background: url(https://s2.music.126.net/style/web2/img/index/index.png?f08f96ed07befc7a00adfd0c8cabaf5f)
+                    no-repeat;
+                background-position: -225px -156px;
+                overflow: hidden;
+                .recommend-title {
+                    font-size: 1.25em;
+                    line-height: 28px;
+                    font-weight: normal;
+                    color: #333;
+                    float: left;
+                }
+                .tab {
+                    float: left;
+                    margin: 7px 0 0 20px;
+                    a {
+                        color: #666;
+                        cursor: pointer;
+                        font-size: 0.75em;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .more {
+                    float: right;
+                    margin-top: 9px;
+                    font-size: 0.75em;
+                    a {
+                        color: #666;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    i {
+                        width: 12px;
+                        height: 12px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        background: url("../../static/assets/index.png") no-repeat;
+                        background-position: 0 -240px;
+                    }
+                }
+            }
+            .discover-playlist {
+                margin: 20px 0 0 0px;
+                // border: 1px solid blue;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .playlist-item {
+                    width: 140px;
+                    height: 204px;
+                    // padding-left: 42px;
+                    // background-color: yellowgreen;
+                    margin-bottom: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: space-between;
+                    position: relative;
+                    .item-detail {
+                        position: relative;
+                        width: 140px;
+                        height: 140px;
+                        background-color: olivedrab;
+                        a {
+                            background: url("../../static/assets/coverall.png");
+                            background-position: 0 0;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 140px;
+                            height: 140px;
+                        }
+                        .item-bottom {
+                            position: absolute;
+                            bottom: 0px;
+                            width: 140px;
+                            background: url("../../static/assets/coverall.png");
+                            background-position: 0 -537px;
+                            button {
+                                outline: none;
+                                border: none;
+                            }
+                            .icon-play {
+                                position: absolute;
+                                width: 16px;
+                                height: 17px;
+                                right: 10px;
+                                bottom: 5px;
+                                background: url("../../static/assets/iconall.png");
+                                background-position: 0 0;
+                            }
+                            .icon-headset {
+                                float: left;
+                                width: 14px;
+                                height: 11px;
+                                margin: 9px 5px 7px 10px;
+                                background: url("../../static/assets/iconall.png");
+                                background-position: 0 -24px;
+                            }
+                            .playnumber {
+                                float: left;
+                                font-size: 0.75em;
+                                margin: 7px 0 0 0;
+                                color: #ccc;
+                            }
+                        }
+                    }
+                    p {
+                        font-size: 0.75em;
+                        margin: 8px 0 3px;
+                        a {
+                            display: inline-block;
+                            max-width: 100%;
+                            vertical-align: middle;
+                            text-decoration: none;
+                            color: #333;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            //@todo
+
+            .new-disk-content {
+                .nd-header {
+                    border-bottom: 2px solid #c10d0c;
+                    height: 33px;
+                    padding: 0px 10px 0px 34px;
+                    background: url(https://s2.music.126.net/style/web2/img/index/index.png?f08f96ed07befc7a00adfd0c8cabaf5f)
+                        no-repeat;
+                    background-position: -225px -156px;
+                    overflow: hidden;
+                    .nd-title {
+                        font-size: 1.25em;
+                        line-height: 28px;
+                        font-weight: normal;
+                        color: #333;
+                        float: left;
+                    }
+                    .nd-more {
+                        float: right;
+                        margin-top: 9px;
+                        font-size: 0.75em;
+                        a {
+                            color: #666;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                        i {
+                            width: 12px;
+                            height: 12px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            background: url("../../static/assets/index.png") no-repeat;
+                            background-position: 0 -240px;
+                        }
+                    }
+                }
+            }
+            .nd-list {
+                margin: 20px 0 37px;
+                width: 689px;
+                height: 188px;
+                background-color: #f5f5f5;
+                display: flex !important;
+                justify-content: space-between;
+                border: 1px solid #d3d3d3;
+                align-items: center;
+                .click-flag-previous {
+                    width: 17px;
+                    height: 17px;
+                    background: url("../../static/assets/index.png") no-repeat;
+                    background-position: -260px -75px;
+                }
+
+                .click-flag-previous:hover {
+                    cursor: pointer;
+                    background-position: -280px -75px;
+                }
+                .ablum-roller {
+                    margin: 28px auto 0;
+                    width: 645px !important;
+                    // border: 1px solid yellow;
+                    // display: flex !important;
+                    .ablum-list {
+                        // background-color: #666;
+                        display: flex !important;
+                        justify-content: space-between;
+                        .ablum-item {
+                            // border: 1px solid red;
+                            // background-color: pink;
+                            width: 118px !important;
+                            height: 150px !important;
+                            font-size: 0.75em;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            .item-cover {
+                                // width: 118px;
+                                // height: 100px;
+                                display: flex;
+                                flex-direction: row;
+                                position: relative;
+                                justify-content: space-between;
+                                img {
+                                    box-shadow: 0px 5px 5px -5px #666;
+                                }
+                                .msk {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 118px;
+                                    height: 100px;
+                                    background: url("../../static/assets/coverall.png");
+                                    background-position: 0 -570px;
+                                    // background-position: 0 -570px;
+                                }
+                            }
+                            .f-thide {
+                                width: 90%;
+                                // line-height: 18px;
+                                text-align: left;
+                                margin: 0px;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                color: #000;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                word-wrap: normal;
+                                a {
+                                    text-decoration: none;
+                                    color: #000; 
+                                }
+                                a:hover {
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+                            }
+                            .f-thide:last-of-type {
+                                width: 90%;
+                                margin: 0px;
+                                // line-height: 18px;
+                                text-align: left;
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+                .click-flag-next {
+                    width: 17px;
+                    height: 17px;
+                    background: url("../../static/assets/index.png") no-repeat;
+                    background-position: -300px -75px;
+                }
+                .click-flag-next:hover {
+                    cursor: pointer;
+                    background-position: -320px -75px;
+                }
+            }
+
+            //@todo
+            .bill {
+                // border: 1px solid black;
+                .bill-hd {
+                    border-bottom: 2px solid #c10d0c;
+                    height: 33px;
+                    padding: 0px 10px 0px 34px;
+                    background: url(https://s2.music.126.net/style/web2/img/index/index.png?f08f96ed07befc7a00adfd0c8cabaf5f)
+                        no-repeat;
+                    background-position: -225px -156px;
+                    overflow: hidden;
+                    .bl-title {
+                        font-size: 1.25em;
+                        line-height: 28px;
+                        font-weight: normal;
+                        color: #333;
+                        float: left;
+                    }
+                    .bl-more {
+                        float: right;
+                        margin-top: 9px;
+                        font-size: 0.75em;
+                        a {
+                            color: #666;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                        i {
+                            width: 12px;
+                            height: 12px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            background: url("../../static/assets/index.png") no-repeat;
+                            background-position: 0 -240px;
+                        }
+                    }
+                }
+                .bill-content {
+                    height: 472px;
+                    margin-top: 20px;
+                    padding-left: 1px;
+                    display: flex;
+                    background: url("../../static/assets/index_bill.png") no-repeat;
+                    .bill-item {
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                        position: relative;
+                        width: calc(689px / 3);
+                        .bill-top {
+                            position: relative;
+                            padding: 20px 0 0 19px;
+                            display: flex;
+                            height: 120px;
+                            .bill-cover {
+                                height: 80px;
+                                width: 80px;
+                                position: relative;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                                .msk {
+                                    background: url("../../static/assets/coverall.png") 100% 100% no-repeat;
+                                    position: absolute;
+                                    left: 0px;
+                                    top: 0px;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-position: -145px -57px;
+                                }
+                            }
+                            .bill-title {
+                                margin: 6px 0 0 10px;
+                                a {
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    word-wrap: normal;
+                                    font-size: 14px;
+                                    color: #000;
+                                    font-weight: bold;
+                                }
+                                a:hover {
+                                    text-decoration: underline;
+                                }
+                                button {
+                                    margin-top: 10px;
+                                    background: url("../../static/assets/index.png") no-repeat 0 9999px;
+                                    width: 22px;
+                                    height: 22px;
+                                }
+                                button:first-of-type {
+                                    background-position: -267px -205px;
+                                    margin-right: 10px;
+                                }
+                                button:first-of-type:hover {
+                                    background-position: -267px -235px;
+                                    cursor: pointer;
+                                }
+                                button:last-of-type {
+                                    background-position: -300px -205px;
+                                }
+                                button:last-of-type:hover {
+                                    background-position: -300px -235px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        .list-content {
+                            height: 200px;
+                            .list-item {
+                                ol {
+                                    list-style: none;
+                                    margin: 0px;
+                                    padding: 0px;
+                                    li {
+                                        margin: 0px;
+                                        padding: 0px;
+                                        height: 32px;
+                                        line-height: 32px;
+                                        display: flex;
+                                        list-style: none;
+                                        vertical-align: middle;
+                                        span {
+                                            width: 35px;
+                                            height: 32px;
+                                            margin-left: 25px;
+                                            text-align: center;
+                                            color: #666666;
+                                            font-size: 16px;
+                                            flex-shrink: 0;
+                                        }
+                                        a {
+                                            display: block;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            word-wrap: normal;
+                                            color: #000000;
+                                            font-size: 12px;
+                                            flex-grow: 1;
+                                        }
+                                        a:hover {
+                                            text-decoration: underline;
+                                            cursor: pointer;
+                                        }
+                                        div {
+                                            width: 0px;
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            margin-right: 15px;
+                                            z-index: -9999;
+                                            button {
+                                                background: url('../../static/assets/index.png') no-repeat 0 9999px;
+                                                width: 17px;
+                                                height: 17px;
+                                                margin-left: 6px;
+                                                cursor: pointer;
+                                            }
+                                            .playBtn {
+                                                // background: url('../../static/assets/index.png') no-repeat 0 9999px;
+                                                // width: 17px;
+                                                // height: 17px;
+                                                background-position: -267px -268px;
+                                            }
+                                            .playBtn:hover {
+                                                background-position: -267px -288px;
+                                            }
+                                            .addToListBtn {
+                                                background: url('../../static/assets/icon.png') no-repeat 0 9999px;
+                                                background-position: 0 -700px;
+                                                margin-top: 3px;
+                                            }
+                                            .addToListBtn:hover {
+                                                background-position: -22px -700px;
+                                            }
+                                            .collectBtn {
+                                                background-position: -297px -268px;
+                                                margin-right: 0px;
+                                            }
+                                            .collectBtn:hover {
+                                                background-position: -297px -288px;
+                                            }
+                                        }
+                                        
+                                    }
+                                    li:nth-child(-n + 3) {
+                                        span {
+                                            color: #c10d0c;
+                                        }
+                                    }
+                                    li:hover {
+                                        div {
+                                            width: 82px;
+                                            z-index: inherit;
+                                        }
+                                    }
+                                }
+                                .list-more {
+                                    width: 100%;
+                                    line-height: 32px;
+                                    font-size: 12px;
+                                    a {
+                                        position: absolute;
+                                        right: 32px;
+                                        color: #000000;
+                                    }
+                                    a:hover {
+                                        text-decoration: underline;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .discover-side {
+            width: 250px;
+            // height: 126px;
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75em;
+            .myinfo {
+                width: 250px;
+                height: 126px;
+                padding: 0 17px;
+                box-shadow: 3px 0px 5px -4px black, -3px 0px 5px -4px black;
+                background: url("../../static/assets/index.png") no-repeat 0 9999px;
+                background-position: 0px 0px;
+                margin: 0px;
+                p {
+                    margin: 0 auto;
+                    padding: 16px 0;
+                    width: 205px;
+                    line-height: 22px;
+                    color: #666;
+                }
+                button {
+                    display: block;
+                    background: url("../../static/assets/index.png");
+                    background-position: 0 -195px;
+                    // background-image: linear-gradient(to bottom, #F32F36, #E01D27);
+                    text-shadow: 0 1px 0 #8a060b;
+                    width: 100px;
+                    height: 31px;
+                    line-height: 31px;
+                    text-align: center;
+                    color: #fff;
+                    margin: 0px auto;
+                }
+                button:hover {
+                    background-position: -110px -195px;
+                    cursor: pointer;
+                }
+            }
+            .singer {
+                padding-top: 15px;
+                // width: 250px;
+                margin: 0px;
+                margin-top: -2px;
+                width: 100%;
+                // height: 455px;
+                border: 1px solid #e9e9e9;
+                border-bottom: none;
+                display: flex;
+                background-color: #ffffff;
+                flex-direction: column;
+                // justify-content: space-between;
+                .singer-content {
+                    margin: 0px 19px;
+                    border: none;
+                    .hd {
+                        position: relative;
+                        height: 23px;
+                        // margin: 0 20px;
+                        border-bottom: 1px solid #ccc;
+                        color: #333;
+                        span {
+                            float: left;
+                            font-weight: bold;
+                        }
+                        a {
+                            float: right;
+                            color: #666;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    .singer-list {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        // width: 230px;
+                        width: 100%;
+                        height: 380px;
+                        margin-top: 6px;
+                        a {
+                            width: 100%;
+                            height: 62px;
+                            background-color: #fafafa;
+                            // box-shadow: 0px 0px 4px -1px black;
+                            margin-top: 14px;
+                            .head {
+                                width: 62px;
+                                height: 62px;
+                                float: left;
+                            }
+                            .info {
+                                float: left;
+                                padding-left: 14px;
+                                width: 148px;
+                                height: 62px;
+                                text-align: left;
+                                display: flex;
+                                flex-direction: column;
+                                border: 1px solid #e9e9e9;
+                                span {
+                                    font-size: 0.875em;
+                                    font-weight: bold;
+                                    margin: 0px;
+                                    padding: 0px;
+                                    margin-top: 8px;
+                                    color: #333;
+                                }
+                                p {
+                                    margin: 0px;
+                                    padding: 0px;
+                                    margin-top: 8px;
+                                    color: #666;
+                                }
+                                .f-thide {
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    word-wrap: normal;
+                                }
+                            }
+                        }
+                        a:hover {
+                            cursor: pointer;
+                            background-color: #f4f4f4;
+                        }
+                    }
+                    .apply {
+                        margin-top: 14px;
+                        display: block;
+                        width: 210px;
+                        height: 31px;
+                        border: 1px solid #c3c3c3;
+                        background: #f8f8f8;
+                        text-align: center;
+                        line-height: 31px;
+                        font-weight: bold;
+                        font-size: 0.75em;
+                        color: #333;
+                        border-radius: 4px;
+                    }
+                    .apply:hover {
+                        background: #fdfdfd;
+                        border: 1px solid #dad8d8;
+                    }
+                }
+            }
+            .dj {
+                width: 100%;
+                border: 1px solid #c3c3c3;
+                border-top: none;
+                padding-top: 14px;
+                .dj-content {
+                    width: 210px;
+                    margin: 0px auto;
+
+                    .dj-hd {
+                        font-size: 0.75em;
+                        font-weight: bold;
+                        width: 210px;
+                        height: 23px;
+                        border-bottom: 1px solid #c3c3c3;
+                    }
+                    .dj-list {
+                        margin-top: 20px;
+                        width: 210px;
+                        height: 300px;
+                        .dj-item {
+                            // border: 1px solid black;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            height: 50px;
+                            a {
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+                            }
+                            .dj-info {
+                                // display: flex;
+                                // flex-direction: column;
+                                // float: left;
+                                width: 100%;
+                                line-height: 21px;
+                                p {
+                                    width: 160px;
+                                    padding: 0px;
+                                    margin: 0px;
+                                    padding-left: 10px;
+                                    line-height: 21px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    word-wrap: normal;
+                                }
+                                p:first-of-type {
+                                    a {
+                                        color: #333;
+                                    }
+                                    a:hover {
+                                        cursor: pointer;
+                                        text-decoration: underline;
+                                    }
+                                }
+                                p:last-of-type {
+                                    color: #666;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .test {
+    //     border: 1px solid red;
+    //     width: 100px;
+    //     height: 100px;
+    //     position: absolute;
+    //     right: 10px;
+    //     top: 10px;
+    //     box-shadow: 0px 5px 5px -5px black;;
+    // }
+}

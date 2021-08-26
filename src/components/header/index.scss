@@ -1,0 +1,158 @@
+.header {
+    background-color: rgb(36, 36, 36);
+    width: 100%;
+    // height: 70px;
+    .header_content {
+        /* 将header部分重要内容控制在页面中央*/
+        position: relative;
+        width: 1100px;
+        height: 70px;
+        margin: 0 auto;
+        font-size: 0.875em;
+        display: flex;
+        .header_left {
+            /* header左侧的导航条 */
+            display: flex;
+            align-items: center;
+            .logo {
+                position: relative;
+                padding: 0px 19px;
+                text-align: center;
+                height: 70px;
+                background: url("../../static/assets/topbar.png") no-repeat;
+                width: 176px;
+                background-position: 0 0;
+                text-indent: -9999px;
+            }
+            ul {
+                height: 100%;
+                width: 508px;
+                margin: 0px 0px;
+                display: flex;
+                justify-content: space-between;
+                a {
+                    padding: 0 19px;
+                    font-size: 14px;
+                    color: #cccccc;
+                    line-height: 70px;
+                    text-align: center;
+                    flex-grow: 1;
+                    position: relative;
+                }
+                a:hover {
+                    background-color: #000000;
+                }
+                a:active {
+                    color: #ffffff;
+                }
+
+                .link-active {
+                    color: #fff;
+                    background-color: #000;
+                    /* 下面的小三角 */
+                    .icon {
+                        position: absolute;
+                        width: 12px;
+                        height: 7px;
+                        bottom: -1px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        background-image: url("../../static/assets/topbar.png");
+                        background-position: 254px 0;
+                    }
+                }
+            }
+        }
+        .header_right {
+            /* header右侧的搜索栏等 */
+            position: absolute;
+            right: 0px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .search {
+                width: 158px;
+                height: 32px;
+                // margin-top: 19px;
+                background-position: 0 -99px;
+                background-color: #fff;
+                border-radius: 32px;
+                span {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background: url("../../static/assets/topbar.png") no-repeat;
+                    background-position: 0 -99px;
+                    line-height: 32px;
+                    input {
+                        width: 120px;
+                        margin-left: 30px;
+                        line-height: 16px;
+                        font-size: 12px;
+                        border: none;
+                        outline: none;
+                        position: relative;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                    }
+                }
+            }
+            .creator {
+                display: block;
+                border-radius: 20px;
+                border: 1px solid #4f4f4f;
+                width: 90px;
+                height: 32px;
+                margin-left: 12px;
+                color: #ccc;
+                line-height: 33px;
+                font-size: 12px;
+                text-align: center;
+            }
+            .creator:hover {
+                color: #fff;
+                text-decoration: none;
+                border: 1px solid #ccc;
+            }
+            .login {
+                margin-left: 20px;
+                display: block;
+                width: 28px;
+                font-size: 0.75em;
+                text-decoration: none;
+                font-weight: normal;
+                color: #787878;
+            }
+            .login:hover {
+                color: #666;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+    .red-line {
+        height: 5px;
+        background-color: #c20b0b;
+    }
+}
+
+.backtop {
+    background: url("../../static/assets/sprite.png") no-repeat;
+    background-position: -265px -47px;
+
+    display: block;
+    position: fixed;
+    text-indent: -9999px;
+    left: 50%;
+    margin-left: 500px;
+    bottom: 160px;
+    width: 49px;
+    height: 44px;
+    cursor: pointer;
+    z-index: 1;
+}
+.backtop:hover {
+    background-position: -325px -47px;
+}
