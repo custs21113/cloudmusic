@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 export default function Artist (props) {
 
     return (
-        <Fragment>
+        <div className="main-content">
             Artist
-        </Fragment>
+        </div>
     )
 }   

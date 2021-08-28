@@ -3,8 +3,8 @@ import React, { Fragment } from 'react'
 export default function Ablum (props) {
 
     return (
-        <Fragment>
+        <div className="main-content">
             Ablum
-        </Fragment>
+        </div>
     )
 }

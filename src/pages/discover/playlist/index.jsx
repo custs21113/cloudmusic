@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 export default function Playlist() {
     return (
-        <Fragment>
+        <div className="main-content">
             Playlist
-        </Fragment>
+        </div>
     )
 }
