@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef, useEffect, useCallback } from 'react'
 import { getSizeImage, formatMinuteSecond, getPlayUrl } from '../../utils/format-utils';
-import store from '../../store'
+import store from '../../store';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { playSongById, addSongToList } from './store/actionCreators';
 import './index.scss';

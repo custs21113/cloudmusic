@@ -54,7 +54,7 @@ export default function reducer(state = initState, action) {
         // case 'ADD_SONG_DETAIL':
         //     return { ...state, currentSong: action.songDetail };
         default:
-            console.log('state', state)
+            // console.log('state', state)
             return state;
     }
 }
