@@ -4,24 +4,26 @@ import store from '../../store';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { playSongById, addSongToList } from './store/actionCreators';
 import './index.scss';
-import { Slider } from 'antd';
+import { Slider, List } from 'antd';
+const ListItem = List.Item;
 
 export default function Player(props) {
     let dispatch = useDispatch();
     let audioRef = useRef();
     let playbarRef = useRef();
     let bufferRef = useRef();
-    let [isPlaying, setIsPlaying] = useState(false);
-    let [isVolumeBarShow, setIsVolumeBarShow] = useState(false);
-    let [currentTime, setCurrentTime] = useState(0);
-    let isChanging = false;
-
-    let { songlist, currentSongIndex, currentSong, firstLoad } = useSelector((state) => ({
+    let { songlist, currentSongIndex, currentSong, firstLoad, isPlay } = useSelector((state) => ({
         songlist: state['player']['songlist'],
         currentSongIndex: state['player']['currentSongIndex'],
         currentSong: state['player']['currentSong'],
         firstLoad: state['player']['firstLoad'],
+        isPlay: state['player']['isPlay'],
     }), shallowEqual);
+    let [isPlaying, setIsPlaying] = useState(isPlay);
+    let [isVolumeBarShow, setIsVolumeBarShow] = useState(false);
+    let [currentTime, setCurrentTime] = useState(0);
+    let isChanging = false;
+
 
     useEffect(() => {
         console.log('34', songlist.length, songlist)
@@ -38,8 +40,11 @@ export default function Player(props) {
         }
     }, [songlist, currentSongIndex]);
     useEffect(() => {
+        setIsPlaying(isPlay)
+    }, [isPlay])
+    useEffect(() => {
         console.log('songDetail:__', currentSong)
-        audioRef.current.src = getPlayUrl(currentSong.id);
+        audioRef.current.src = getPlayUrl(currentSong?.id);
         bufferRef.current.style.width = '0px';
     }, [currentSong, firstLoad])
 
@@ -93,7 +98,7 @@ export default function Player(props) {
 
     let timeUpdate = (e) => {
         let currentTime = e.target.currentTime;
-        let duration = currentSong.dt;
+        let duration = currentSong?.dt;
         if (!isChanging) {
             setCurrentTime(currentTime * 1000);
         }
@@ -141,8 +146,8 @@ export default function Player(props) {
                     <div className="play">
                         <div className="play-left">
                             <div className="song-info">
-                                <a href={`https://music.163.com/song?id=${currentSong.id}`}>{currentSong?.name}</a>
-                                {currentSong.mv ? <a href={`https://music.163.com/mv?id=${currentSong.mv}`}>MV</a> : <a> </a>}
+                                <a href={`https://music.163.com/song?id=${currentSong?.id}`}>{currentSong?.name}</a>
+                                {currentSong?.mv ? <a href={`https://music.163.com/mv?id=${currentSong?.mv}`}>MV</a> : <a> </a>}
                                 <span>
                                     <span>
                                         {
@@ -162,7 +167,7 @@ export default function Player(props) {
 
                         </div>
                         <span className="time">
-                            <em>{currentTime === currentSong.dt ? '00:00/00:00' : formatMinuteSecond(currentTime)}/{currentSong.dt ? formatMinuteSecond(currentSong.dt) : '00:00'}</em>
+                            <em>{currentTime === currentSong?.dt ? '00:00/00:00' : formatMinuteSecond(currentTime)}/{currentSong?.dt ? formatMinuteSecond(currentSong?.dt) : '00:00'}</em>
                         </span>
                     </div>
                     <div className="operation">
@@ -175,6 +180,25 @@ export default function Player(props) {
 
                         <button className="volume" onClick={() => setIsVolumeBarShow(!isVolumeBarShow)}>音量</button>
                         <button className="mode">播放模式</button>
+                        <button onClick={()=> console.log(songlist)}> TEST</button>
+                        <div style={{
+                            position: "fixed",
+                            bottom: "100px",
+                            zIndex: 1000,
+                            height: "100%", 
+                            backgroundColor: "red"
+                        }}>
+                            <button onClick={()=> console.log(songlist)}>Test</button>
+                            <List>
+                                {
+                                    songlist.map(item => {
+                                        return (
+                                            <ListItem>{item.name}</ListItem>
+                                        )
+                                    })
+                                }
+                            </List>
+                        </div>
                     </div>
                 </div>
             </div>

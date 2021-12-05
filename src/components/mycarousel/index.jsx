@@ -47,7 +47,7 @@ export default function Mycarousel() {
             {topBanners && topBanners.map(item => {
               return (
                 <div key={item.imageUrl}>
-                  <img src={item.imageUrl} alt={item.typeTitle} preload='true'/>
+                  <img src={item.imageUrl} title={item.typeTitle} alt={item.typeTitle} preload='true'/>
                 </div>
               )
             })}

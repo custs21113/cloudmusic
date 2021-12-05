@@ -41,13 +41,13 @@ export default function reducer(state = initState, action) {
                 currentSongIndex = songlist.indexOf(action.songId);
                 currentSong = action.songDetail;
                 console.log('playSongBySelect, but this song is included in songlist', state)
-                return {...state, currentSongIndex, currentSong };
+                return {...state, currentSongIndex, currentSong, isPlay: true };
             } else {
                 currentSong = action.songDetail;
                 songlist = [...songlist, action.songId];
                 currentSongIndex = songlist.length - 1;
 
-                state = { ...state, songlist, currentSong, currentSongIndex};
+                state = { ...state, songlist, currentSong, currentSongIndex,  isPlay: true};
                 console.log('playSongBySelect, success', state);
                 return state;
             }

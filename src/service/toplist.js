@@ -9,8 +9,9 @@ export function getToplistInfo() {
 export function getToplistDetail(id) {
   return request({
     url: '/playlist/detail',
-    params: {
+    data: {
       id
-    }
+    },
+    method: 'POST'
   })
 }

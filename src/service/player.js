@@ -2,9 +2,10 @@ import request from './request'
 export function getSongDetail(ids){
     return request({
         url: '/song/detail',
-        params: {
+        data: {
             ids
-        }
+        },
+        method: 'POST'
     })
 }
 export function getSD(id){

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { getHotRecommends, getNewAlbums, getSettleSinger, getDjradios } from '../../service/recommend';
 import { getToplistDetail } from '../../service/toplist';
@@ -12,6 +12,10 @@ import Singer from './child-pages/Singer';
 import Djradio from './child-pages/Djradio';
 import DiscoverPlaylist from './child-pages/DiscoverPlaylist';
 import Bill from './child-pages/Bill';
+import { loginAction } from '../header/store/actionCreators';
+import { Login } from '../header';
+import { getSizeImage } from '../../utils/format-utils';
+
 import './index.scss';
 
 export default function Recommend(props) {
@@ -22,6 +26,11 @@ export default function Recommend(props) {
     let [newList, setNewList] = useState([]);
     let [originList, setOriginList] = useState([]);
     let [recommends, setRecommends] = useState([]);
+    let [loginModalVisible, setLoginModalVisible] = useState(false);
+    let { isLogin, profile } = useSelector((state) => ({
+        isLogin: state['login']['isLogin'],
+        profile: state['login']['profile'],
+    }), shallowEqual);
     const dispatch = useDispatch();
 
     let getRecommends = async () => {
@@ -82,6 +91,10 @@ export default function Recommend(props) {
             console.log(error)
         }
     }
+
+    function test() {
+        dispatch(loginAction({ phone: 13631044564, password: '000123456' }));
+    }
     useEffect(() => {
         getRecommends();
         getAlbums();
@@ -120,8 +133,13 @@ export default function Recommend(props) {
 
                 <div className="discover-side">
                     <div className="myinfo">
-                        <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
-                        <button onClick={()=>alert('登录功能尚未完成')}>用户登录</button>
+                        {isLogin ? <MyInfo/>: <>
+                            <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+                            <button onClick={() => {
+                                setLoginModalVisible(true);
+                            }}>用户登录</button>
+                        </>}
+                        <Login {...{ loginModalVisible, setLoginModalVisible }} />
                     </div>
                     <Singer props={singer}></Singer>
                     <Djradio props={djradio}></Djradio>
@@ -131,3 +149,26 @@ export default function Recommend(props) {
     )
 }
 
+function MyInfo({...props}) {
+
+    let { isLogin, profile } = useSelector((state) => ({
+        isLogin: state['login']['isLogin'],
+        profile: state['login']['profile'],
+    }), shallowEqual);
+
+    return (
+        <div>
+            <div>
+                <a >
+                    <img src={getSizeImage(profile.avatarUrl, 80)} />
+                </a>
+                <div class="info">
+                    <h4>{profile.nickname}</h4>
+                </div>
+            </div>
+            <div>
+                动态： {profile.eventCount} 关注：{profile.follows} 粉丝：{profile.followeds}
+            </div>
+        </div>
+    )
+}
