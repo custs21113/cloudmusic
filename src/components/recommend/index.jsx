@@ -40,23 +40,6 @@ export default function Recommend(props) {
             console.log(error)
         }
     }
-    let getSinger = async () => {
-        try {
-            let res = await getSettleSinger();
-            console.log('singer', res.data.artists)
-            setSinger([...res?.data?.artists])
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    let getDjradio = async () => {
-        try {
-            let res = await getDjradios();
-            setDjradio([...res?.data?.djradios])
-        } catch (error) {
-            console.log(error)
-        }
-    }
     let getUpList = async () => {
         try {
             let res = await getToplistDetail(19723756);
@@ -85,8 +68,6 @@ export default function Recommend(props) {
     useEffect(() => {
         getRecommends();
         getAlbums();
-        getSinger();
-        getDjradio();
         getUpList();
         getNewList();
         getOriginList();
