@@ -3,14 +3,11 @@ import { getSizeImage } from '../../../utils/format-utils';
 import {  getSettleSinger } from '../../../service/recommend';
 
 export default function Singer(props) {
-    // let {singer} = props;
-    // console.log(singer, props)
     let [singer, setSinger] = useState([]);
     
     let getSinger = async () => {
         try {
             let res = await getSettleSinger();
-            console.log('singer', res.data.artists)
             setSinger([...res?.data?.artists])
         } catch (error) {
             console.log(error)

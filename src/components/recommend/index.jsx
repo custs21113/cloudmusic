@@ -15,63 +15,6 @@ import Bill from './child-pages/Bill';
 import './index.scss';
 
 export default function Recommend(props) {
-    let [albums, setAlbums] = useState([]);
-    let [singer, setSinger] = useState([]);
-    let [djradio, setDjradio] = useState([]);
-    let [upList, setUpList] = useState([]);
-    let [newList, setNewList] = useState([]);
-    let [originList, setOriginList] = useState([]);
-    let [recommends, setRecommends] = useState([]);
-    const dispatch = useDispatch();
-
-    let getRecommends = async () => {
-        try {
-            let res = await getHotRecommends(8)
-            setRecommends([...res.data.result]);
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    let getAlbums = async () => {
-        try {
-            let res = await getNewAlbums();
-            setAlbums([...res?.data?.albums]);
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    let getUpList = async () => {
-        try {
-            let res = await getToplistDetail(19723756);
-            setUpList([...res.data.playlist.tracks.slice(0, 10)])
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    let getNewList = async () => {
-        try {
-            let res = await getToplistDetail(3779629);
-            setNewList([...res.data.playlist.tracks.slice(0, 10)])
-        } catch (error) {
-            console.log(error)
-        }
-
-    }
-    let getOriginList = async () => {
-        try {
-            let res = await getToplistDetail(2884035);
-            setOriginList([...res.data.playlist.tracks.slice(0, 10)])
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    useEffect(() => {
-        getRecommends();
-        getAlbums();
-        getUpList();
-        getNewList();
-        getOriginList();
-    }, []);
     return (
         <div className="recommend">
             <div className="discover-module">
@@ -92,7 +35,7 @@ export default function Recommend(props) {
                     </div>
                     <DiscoverPlaylist></DiscoverPlaylist>
 
-                    <NDList props={albums}></NDList>
+                    <NDList></NDList>
 
 
                     <Bill></Bill>
@@ -104,8 +47,8 @@ export default function Recommend(props) {
                         <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
                         <button onClick={()=>alert('登录功能尚未完成')}>用户登录</button>
                     </div>
-                    <Singer props={singer}></Singer>
-                    <Djradio props={djradio}></Djradio>
+                    <Singer></Singer>
+                    <Djradio></Djradio>
                 </div>
             </div>
         </div >

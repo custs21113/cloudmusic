@@ -8,9 +8,11 @@ export function getToplistInfo() {
 
 export function getToplistDetail(id) {
   return request({
-    url: '/playlist/detail',
+    url: '/playlist/track/all',
     params: {
-      id
+      id,
+      limit: 10,
+      offset: 1,
     }
   })
 }

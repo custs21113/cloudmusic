@@ -11,7 +11,7 @@ export default function Bill(props) {
     let getUpList = async () => {
         try {
             let res = await getToplistDetail(19723756);
-            setUpList([...res.data.playlist.tracks.slice(0, 10)])
+            setUpList(res.data.songs)
         } catch (error) {
             console.log(error)
         }
@@ -19,7 +19,7 @@ export default function Bill(props) {
     let getNewList = async () => {
         try {
             let res = await getToplistDetail(3779629);
-            setNewList([...res.data.playlist.tracks.slice(0, 10)])
+            setNewList(res.data.songs)
         } catch (error) {
             console.log(error)
         }
@@ -29,7 +29,7 @@ export default function Bill(props) {
         try {
             let res = await getToplistDetail(2884035);
             // console.log('getOriginList', res.data.playlist.tracks.slice(0, 10));
-            setOriginList([...res.data.playlist.tracks.slice(0, 10)])
+            setOriginList(res.data.songs)
         } catch (error) {
             console.log(error)
         }

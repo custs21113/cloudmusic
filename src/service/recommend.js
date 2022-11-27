@@ -1,6 +1,6 @@
 // import { request } from 'express';
 import request from './request';
-import request2  from './requst2';
+import request2 from './request2';
 
 export function getTopBanners() {
     return request({
