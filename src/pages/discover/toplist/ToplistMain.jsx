@@ -1,12 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { getToplistInfo, getToplistDetail } from '../../../service/toplist';
+import { getToplistInfo, getToplistDetailAll } from '../../../service/toplist';
 import { getSizeImage, formatMinuteSecond } from '../../../utils/format-utils';
 import { addSongToList } from '../../../components/player/store/actionCreators';
 import './index.scss'
 export default function Toplist(props) {
-    // let [list, setList] = useState([]);
-    console.log(props);
     let { id } = props.match.params;
     let [playlist, setPlaylist] = useState({});
     let [tracks, setTracks] = useState([]);
@@ -14,8 +12,7 @@ export default function Toplist(props) {
     const dispatch = useDispatch();
 
     useEffect(async () => {
-        let res = await getToplistDetail(id);
-        console.log(res);
+        let res = await getToplistDetailAll(id);
         setPlaylist(res?.data?.playlist);
         setTracks(res?.data?.playlist?.tracks);
         setTrackCount(res?.data?.playlist?.trackCount);
@@ -67,7 +64,7 @@ export default function Toplist(props) {
                         </thead>
                         <tbody>
                             {
-                                tracks.map((item, index) => {
+                                tracks.length > 0 && tracks?.map((item, index) => {
                                     return (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
@@ -86,10 +83,10 @@ export default function Toplist(props) {
                                                     <td><a href="">{item.name}</a></td>}
                                             <td><p>{formatMinuteSecond(item.dt)}</p>
                                                 <div className="opt">
-                                                    <button onClick={() => dispatch(addSongToList(item.id))}></button>
-                                                    <button onClick={() => alert('尚不支持收藏')}></button>
-                                                    <button onClick={() => alert('尚不支持分享')}></button>
-                                                    <button onClick={() => alert('尚不支持下载')}></button>
+                                                    <button onClick={() => dispatch(addSongToList(item.id))} title="播放"></button>
+                                                    <button onClick={() => alert('尚不支持收藏')} title="收藏"></button>
+                                                    <button onClick={() => alert('尚不支持分享')} title="分享"></button>
+                                                    <button onClick={() => alert('尚不支持下载')} title="下载"></button>
                                                 </div>
                                             </td>
                                             <td><a>{item.ar[0].name}</a></td>

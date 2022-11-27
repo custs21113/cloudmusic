@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { getDjradios } from '../../../service/recommend';
 
 export default function Djradio(props) {
@@ -14,8 +14,8 @@ export default function Djradio(props) {
             console.log(error)
         }
     }
-    useEffect(() => {
-        getDjradio();
+    useLayoutEffect(() => {
+        // getDjradio();
     }, [])
     return (
         <Fragment>

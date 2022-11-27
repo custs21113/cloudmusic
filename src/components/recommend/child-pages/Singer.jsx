@@ -15,7 +15,7 @@ export default function Singer(props) {
     }
 
     useEffect(() => {
-        getSinger();
+        // getSinger();
     }, []);
     return (
         <Fragment>

@@ -224,12 +224,14 @@
                             }
                         }
                     }
+                    td {
+                        padding: 6px 0px;
+                    }
                     tr:nth-of-type(2n + 1) {
                         td {
                             font-size: 0.75rem;
                             color: #666666;
                             background-color: #f7f7f7;
-                            height: 70px;
                         }
                         td:nth-of-type(1) {
                             // background: url('../../../static/assets/table.png') no-repeat 0 9999px;
@@ -241,7 +243,6 @@
                         }
                         td:nth-of-type(2) {
                             width: 326.06px;
-                            padding: 10px;
                         }
                         td:nth-of-type(3) {
                             // background: yellow;
@@ -287,7 +288,6 @@
                     }
                     tr:nth-of-type(2n) {
                         td {
-                            height: 70px;
                             font-size: 0.75rem;
                             color: #666666;
                         }
@@ -301,10 +301,12 @@
                         }
                         td:nth-of-type(2) {
                             width: 326.06px;
-                            padding: 10px;
                         }
                         td:nth-of-type(3) {
                             // background: yellow;
+                            p {
+                                line-height: 18px;
+                            }
                             div {
                                 // button {
                                 // }
@@ -347,6 +349,7 @@
                     }
                     
                     tr:hover {
+                        // background-color: red;
                         td:nth-of-type(3) {
                             p{
                                 display: none;

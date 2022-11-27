@@ -16,3 +16,11 @@ export function getToplistDetail(id) {
     }
   })
 }
+export function getToplistDetailAll(id) {
+  return request({
+    url: '/playlist/detail',
+    params: {
+      id
+    }
+  })
+}

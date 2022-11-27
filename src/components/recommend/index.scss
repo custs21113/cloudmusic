@@ -328,7 +328,7 @@
                     background: url("../../static/assets/index_bill.png") no-repeat;
                     .bill-item {
                         flex-grow: 1;
-                        flex-shrink: 1;
+                        flex-shrink: 0;
                         position: relative;
                         width: calc(689px / 3);
                         .bill-top {
