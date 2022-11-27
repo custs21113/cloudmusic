@@ -24,3 +24,4 @@ yarn-error.log*
 package-lock.json*
 js.html*
 新建文本文档.html*
+yarn.lock*
